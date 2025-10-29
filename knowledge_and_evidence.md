@@ -215,16 +215,23 @@ def check_if_input_valid(guess_word, allowed_word_list):
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | NotReal    | Sub           | NotRealParent    |
+|   Smiley      |   Super         |      ...         |
+|   Sad      |   Sub         |      Smiley         |
+|   Happy      |   Sub         |      Smiley, Blinkable         |
+|   Blinkable      |   Sub         |      ABC         |
 |   ...      |   ...         |      ...         |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Your answer here
+> Abstraction is a core concept in programming that means focusing on the essential features of something while hiding the unnecessary details.
+for example say you have a class called vehicles which has methods like refuel() and start_engine(),
+and when a part of your program calls start_engine(), the user doesn't need to know how you start the engine, how much fuel it needs, how the engine works, as the function start_engine does everything by itself.
 >
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
+> It's known as inheritance.
+for happy.py for instance, uses inheritance of both Smiley and Blinkable for it's code, as some code within happy.py relies on those parent classes (example Smiley.py to "build" smiley then happy adds the mouth to the program.  
 >
 
 ### 2.5. Compare and contrast classes
@@ -232,16 +239,17 @@ def check_if_input_valid(guess_word, allowed_word_list):
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+   > For one, 'sad.py' doesn't use the parent 'Blinkable' as it doesn't have a blink function
+	They both draw their 'mouths' differently 
    >
 2. What are the key similarities?
-   > Your answer here
+   > They both use the same draw_eyes(), eyes variable which is [10, 13, 18, 21] in both
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > Happy.py has the blink function, while sad.py does not.
    >
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > Happy.py's smiley has the abilty to blink.
    >
 
 ### 2.6. Where is the Sense(Hat) in the code?
