@@ -87,36 +87,35 @@ python3 main.py
    | Control Flow | File       | First line  | Line range  |
    | ------------ | ---------- | ----------- | ----------- |
    |  sequence    | smiley.py  | line 11     | 16 lines    |
-   |  selection   | sad.py     | line 26     | 5 lines     |
-   |  iteration   | happy.py   | lines 21    | 2 lines     |
+   |  selection    | sad.py  | line 26     | 5 lines    |
+   |  iteration    | happy.py  | line 21     | 2 lines    |
 
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- | ----- | --------|
-   | int                     | sad.py, at line 24 | At 'eyes = [10, 13, 18, 21]' numbers are int in list  |
-   | float                   | happy.py, at line 33 | At 'def blink(self, delay=0.25):'           |
-   | str                     | -  | a simple string_example =  "this is a string" is a str example    |
-   | bool                    | smiley.py, at line 28 | At 'def dim_display(self, dimmed=True  ):' |
+   | Type | Used? | Example |
+   | ----- | ----- | ------ |
+   |  int    | sad.py, at line 24  | At 'eyes = [10, 13, 18, 21]' numbers are int in list    |
+   |  float    | happy.py, at line 33  | At 'def blink(self, delay=0.25):'    |
+   |  str    | -  | a simple string_example =  "this is a string" is a str example    |
+   |  bool    | smiley.py, at line 28  | At 'def dim_display(self, dimmed=True  ):'    |
 
 
-5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
+6. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
 > The following is a class variables:
-…
+
     WHITE = (255, 255, 255)
     GREEN = (0, 255, 0)
     RED = (255, 0, 0)
     YELLOW = (255, 255, 0)
     BLANK = (0, 0, 0)
-…
-: The Following is a instance variable:
-…
+> The Following is a instance variable:
+
 	self.sense_hat = SenseHat()
 	Y = self.YELLOW
 	O = self.BLANK
-…
+	
 Class Variables are defined at the top of the class, and is used globally within the class.
 while instance variables are only used in that instance as they don't exist outside that instance.
 >
@@ -124,16 +123,17 @@ while instance variables are only used in that instance as they don't exist outs
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > The constructor Code -->
-…
-(def __init__(self):
-	super().__init__()
-
-	self.draw_mouth()
-	self.draw_mouth()
-…
+   > The constructor Code:
+   ```
+	(def __init__(self):
+		super().__init__()
+		self.draw_mouth()
+		self.draw_mouth()
+	```
 A constructor of a class is generally use to create instances of said class 
-(example: class Cat:
+(example: 
+```
+class Cat:
 def __init__(self, name, age):
 	self.cat_name = name
 	self.cat_age = age
@@ -141,6 +141,7 @@ cat = Cat("cat.exe", "Gray", True)
 print(f"Cat's name is {cat.name}")
 print("AND yes that is the cat's actual name")
 print("Also no I will not rename it")
+```
 )
 This constructor allows the user to build Smiley's "happy" face as it as it uses the super().__init__() which imports it's parents which it uses to build itself.
    >
@@ -160,13 +161,15 @@ This constructor allows the user to build Smiley's "happy" face as it as it uses
 2. List three aspects of this convention you see applied in the code.
 
 >The use of 4 space per indention level (no tabs)
-- naming conventions: Variables and functions names use lowercase_with_underscores. while Class names are CapitalizedWords.    
-- limit each line to 79 characters 
+> naming conventions: Variables and functions names use lowercase_with_underscores. while Class names are CapitalizedWords.    
+> limit each line to 79 characters 
 >
 
 3. Give two examples of organizational documentation in the code.
 
-> - """ 
+> 
+```
+ -""" 
 cat.py
 ------
 Contains the methods and such for cats
@@ -198,7 +201,7 @@ def check_if_input_valid(guess_word, allowed_word_list):
             return guess_word
 … 
 
-
+```
 >
 
 ### 2.4. Identifying and understanding classes
